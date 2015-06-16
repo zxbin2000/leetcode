@@ -21,12 +21,29 @@ public class Solution2 {
         ListNode result = new Solution2().addTwoNumbers(node1, node2);
         do {
             System.out.print(result.val + "->");
-        } while(result.next != null);
+            result = result.next;
+        } while(result != null);
     }
 
     private ListNode addTwoNumbers(ListNode node1, ListNode node2) {
-        ListNode result = null;
 
+        return addList(node1, node2, 0);
+
+    }
+
+    private ListNode addList(ListNode node1, ListNode node2, int carry) {
+        if(node1 == null && node2 == null) {
+            if(carry != 0)
+                return new ListNode(carry);
+            return null;
+        }
+        int val1 = (node1 != null) ? node1.val : 0;
+        int val2 = (node2 != null) ? node2.val : 0;
+        int val = val1 + val2 + carry;
+        ListNode result = new ListNode(val % 10);
+        ListNode next1 = (node1 != null) ? node1.next : null;
+        ListNode next2 = (node2 != null) ? node2.next : null;
+        result.next = addList( next1, next2, val / 10);
         return result;
     }
 
