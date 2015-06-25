@@ -1,2 +1,2 @@
 # leetcode
-leetcode java
+# leetcode 刷题练习
