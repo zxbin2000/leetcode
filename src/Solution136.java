@@ -7,7 +7,7 @@
 public class Solution136 {
 
     public static final void main(String[] args) {
-        int[] case1 = { 10, 10, 30, 5, 30};
+        int[] case1 = { 10, 20, 20, 10, 30, 5, 30};
         System.out.println(singleNumber(case1));
 
         int[] case2 = { 1 };
